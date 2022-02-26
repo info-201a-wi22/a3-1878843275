@@ -1,0 +1,56 @@
+---
+title: "Incarceration_trends in the U.S."
+author: "Kris Shen"
+date: "2022/2/25"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r include=FALSE}
+source("../source/analysis.R")
+```
+
+# Keywords
+
+“In the USA; Incarceration Trends”
+
+# Affiliation
+
+INFO-201: Technical Foundations of Informatics - The Information School - University of Washington
+
+# Introduction 
+Incarceration means that confinement in a jail or prison : the act of imprisoning someone or the state of being imprisoned. After decades of increasing incarceration in the United States, the number has decreased in recent years. However, these nationwide declines mask significant differences in incarceration trends across counties, states. I analysis the top five states with the largest incarceration numbers in the U.S. and the number of male and female in`r state_highest_incarcerations`. I focused on **total_pop_15to64** and **female_pop_15to64** and **male_pop_15to64**. I hope that by analyzing these data, I can provide help to the local government. Quantitative data can help drive policy and inform change. And make them take notice. At the same time, I analyze the difference between the number of male and female to tell people that female need help. Women are more likely to be jailed for abuse and mental health conditions.   About 86 percent of women in prison have experienced sexual violence, and 77 percent have experienced intimate partner violence. But it do little to address their needs. Incarceration in the United States as a whole has increased significantly over the past two decades, although incarceration in a handful of states has declined dramatically. **Incarceration is a big problem** and the local government needs to come up with the necessary solutions.
+
+# Dataset Information and Summary
+
+This dataset has **`r num_features_incarceration`** variables and **`r obs_incarceration`** observations, collected data about incarceration from 1970 to 2018. Through this assigment analysis, people can know **`r state_highest_incarcerations`** has the largest number of incarceration population (15 to 64) in the USA State, which is **`r num_highest_state`**.  Moveover, **`r name_highest_county`** is the county that has the highest number of incarcerations(15 to 64), and **`r name_lowest_county`** is the county that has the least number of incarcerations(15 to 64). People also can know the female and male population about incarceration in the most recent year in **`r state_highest_incarcerations`**. Female number is **`r female_highest_CA`**, and male number is **`r male_highest_CA`**.
+
+**Column Names:** `r name_features_incarceration`
+
+# Data Visualizations
+##  Different states Incarceration Trends Over Time
+In the first chart, I plotted the trends over time in the **top five states** with the highest number of incarcerations. Because I wanted to see which states had the biggest increases in overall incarceration by using the chart below. The data can also be submitted to local governments for attention. Hopefully this will help improve people's quality of life. According to the investigation, the number of CA, TX and FL incarcerations have been increasing but has not declined. **CA** is showing a trend of **substantial growth**. However, the number of incarcerations in **NY and IL** began to decline around 2013, and their changes were relatively stable.
+
+```{r echo=FALSE}
+source("../source/analysis.R")
+plot(first_chart)
+```
+
+## Female vs Male Incarceration
+In the second chart, from the analysis of the previous chart, I can see that **California** is the state with the largest number of incarcerations in the United States. So I plotted the number of men and women incarcerated in California. I hope to find out some of the reasons for the increase in California population and analyze the gender differences. It is clear from this graph that **between 1970 and 1978**, the number of female incarcerated in local jails increased exponentially and exceeded the rate of male. It follows that **women were particularly vulnerable to imprisonment in the past**. But starting **in 1979**, male began to outnumber female. Both are always on the rise.
+
+```{r echo=FALSE}
+source("../source/analysis.R")
+plot(second_chart)
+```
+
+## Incarceration by Geography
+The map below shows the number of women incarcerated in different states across the United States in the most recent year. **The incarceration rate for women in the U.S. is now more than 10 times what it was in 1970.** Women are particularly vulnerable to incarceration. Most women in custody have experienced trauma and unmet physical and mental health needs. Through data visualization, people can clearly understand the problems faced by each state and propose solutions in a timely manner.
+
+```{r echo=FALSE}
+source("../source/analysis.R")
+third_map
+```
